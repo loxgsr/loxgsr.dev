@@ -109,7 +109,7 @@ export default component$(() => {
               width={412}
               height={412}
               class={`vov fade-in-right w-full rounded-xl transition duration-200	`}
-              src="https://placehold.it/412x412"
+              src="https://placehold.co/412x412"
               alt="gustavoca image"
             />
           </figure>

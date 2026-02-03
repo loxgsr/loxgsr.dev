@@ -3,6 +3,7 @@
   "compatibility_date": "2026-02-03",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "exclude": ["_worker.js", "_routes.json"]
   }
 }

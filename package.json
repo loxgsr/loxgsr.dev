@@ -40,7 +40,6 @@
     "eslint-plugin-qwik": "^1.19.0",
     "hamburger-qwik": "^0.2.1",
     "nx": "^22.4.4",
-    "postcss": "^8.4.49",
     "prettier": "3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "qwik-ui": "^0.4.3",

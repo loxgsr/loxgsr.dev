@@ -1,6 +1,6 @@
 @layer base, qwik-ui, popover-polyfill, theme, components, utilities;
-@import 'tailwindcss';
-@import 'tw-animate-css';
+@import "tailwindcss";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -32,9 +32,12 @@
     --shadow-2xs: 0 1px rgb(0 0 0 / 0.05);
     --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
     --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.01);
     --transform-press: scale(0.95);
@@ -66,9 +69,12 @@
     --shadow-2xs: 0 1px rgb(0 0 0 / 0.05);
     --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
     --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
     --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.01);
     --transform-press: scale(0.95);
@@ -161,36 +167,112 @@
   * {
     @apply border-border outline-ring/50;
   }
-  
-  /* Transición suave SOLO en elementos de fondo, NO en textos */
-  body, div, section, header, footer, nav, main, aside, article {
-    transition: background-color 0.6s ease, border-color 0.6s ease;
-  }
-  
-  /* View Transitions API para cambio ultra suave */
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 0.6s;
-  }
-  
+
   body {
     @apply bg-background text-foreground;
     /* Gradiente mesh moderno y visible */
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(255, 118, 117, 0.12) 0%, transparent 40%),
-      radial-gradient(circle at 90% 10%, rgba(116, 185, 255, 0.1) 0%, transparent 40%),
-      radial-gradient(circle at 50% 90%, rgba(123, 237, 159, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(162, 155, 254, 0.08) 0%, transparent 40%),
+    background: radial-gradient(
+        circle at 10% 20%,
+        rgba(255, 118, 117, 0.12) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 90% 10%,
+        rgba(116, 185, 255, 0.1) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 50% 90%,
+        rgba(123, 237, 159, 0.08) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(162, 155, 254, 0.08) 0%,
+        transparent 40%
+      ),
       linear-gradient(to bottom, #ffffff, #f9fafb);
   }
   .dark body {
     /* Gradiente mesh para modo oscuro - más suave y legible */
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(255, 118, 117, 0.10) 0%, transparent 40%),
-      radial-gradient(circle at 90% 10%, rgba(116, 185, 255, 0.10) 0%, transparent 40%),
-      radial-gradient(circle at 50% 90%, rgba(123, 237, 159, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 80% 70%, rgba(162, 155, 254, 0.08) 0%, transparent 40%),
+    background: radial-gradient(
+        circle at 10% 20%,
+        rgba(255, 118, 117, 0.1) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 90% 10%,
+        rgba(116, 185, 255, 0.1) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 50% 90%,
+        rgba(123, 237, 159, 0.08) 0%,
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 70%,
+        rgba(162, 155, 254, 0.08) 0%,
+        transparent 40%
+      ),
       linear-gradient(to bottom, rgb(17 24 39), rgb(31 41 55));
   }
 }
 
+/* Hero Image SVG Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+@keyframes float-alt {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(10px) translateX(5px);
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.ani-float {
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center;
+}
+.ani-float-slow {
+  animation: float 8s ease-in-out infinite;
+  transform-origin: center;
+}
+.ani-float-alt {
+  animation: float-alt 7s ease-in-out infinite;
+  transform-origin: center;
+}
+.ani-pulse {
+  animation: pulse-soft 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Hero Image SVG Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .hero-svg .light-mode {
+    display: none;
+  }
+  .hero-svg .dark-mode {
+    display: block !important;
+  }
+}

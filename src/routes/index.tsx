@@ -1,6 +1,7 @@
 import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import { Link, routeLoader$, type DocumentHead } from '@builder.io/qwik-city';
 import AboutMeSection from '~/components/about-me-section';
+import { HeroImage } from '~/components/hero-image';
 // import Typed, { type TypedOptions } from 'typed.js';
 import { Button } from '~/components/ui/button';
 import { getGifs } from '~/helpers/gifs';
@@ -77,9 +78,9 @@ export default component$(() => {
   //   });
   // });
   return (
-    <main class="px-4 sm:px-8 lg:px-[112px] space-y-12 sm:space-y-20 lg:space-y-32">
-      <section class="grid grid-cols-1 gap-y-6 sm:gap-y-12 xl:grid-cols-7 px-0 sm:px-6 lg:px-[120px] py-8 sm:py-16 lg:py-24 items-center">
-        <section class="col-span-1 text-3xl sm:text-3xl lg:text-[42px] text-left xl:col-span-4 space-y-6 sm:space-y-8 order-2 xl:order-1">
+    <div class="space-y-12 sm:space-y-20 lg:space-y-32">
+      <section class="grid grid-cols-1 gap-y-6 sm:gap-y-12 xl:grid-cols-12 py-14 sm:py-24 lg:py-36 items-center">
+        <section class="col-span-1 text-3xl sm:text-3xl lg:text-[42px] text-left xl:col-span-6 space-y-6 sm:space-y-8 order-2 xl:order-1">
           <h2 class="font-semibold leading-tight sm:leading-snug">
             <span class="dark:text-[#FF7675]">Construyendo</span> un{' '}
             <span class="dark:text-[#74B9FF]">futuro</span>{' '}
@@ -105,21 +106,13 @@ export default component$(() => {
             </Button>
           </div>
         </section>
-        <section class="col-span-1 flex items-center justify-start xl:justify-center xl:col-span-3 order-1 xl:order-2 w-full">
-          <figure class="w-full max-w-[260px] sm:max-w-[320px] lg:max-w-md xl:max-w-full transition duration-200">
-            <img
-              width={412}
-              height={412}
-              class={`vov fade-in-right w-full rounded-xl transition duration-200 shadow-lg`}
-              src="https://media.licdn.com/dms/image/v2/D4D03AQEYc29pHlTjlA/profile-displayphoto-crop_800_800/B4DZwlDd4nKAAI-/0/1770148192425?e=1771459200&v=beta&t=K7pJ9UUFsW4YooF9r7MjYFbYrj1NbqDELzG_API_Ggs"
-              alt="gustavoca image"
-            />
-          </figure>
+        <section class="col-span-1 flex items-center justify-start xl:justify-center xl:col-start-8 xl:col-span-4 order-1 xl:order-2 w-full">
+          <HeroImage />
         </section>
       </section>
 
       <AboutMeSection />
-    </main>
+    </div>
   );
 });
 

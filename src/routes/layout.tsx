@@ -20,8 +20,10 @@ export default component$(() => {
     <div class="flex min-h-screen flex-col">
       <GlobalLoader />
       <Navbar />
-      <main class="flex-1">
-        <Slot />
+      <main class="flex-1 px-4 sm:px-8 lg:px-[112px]">
+        <div class="lg:px-[142px]">
+          <Slot />
+        </div>
       </main>
       <Footer />
     </div>

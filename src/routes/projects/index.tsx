@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { routeLoader$ } from '@builder.io/qwik-city';
+import { DocumentHead, routeLoader$ } from '@builder.io/qwik-city';
 import { getProjects } from '~/helpers/projects';
 
 export const useProjects = routeLoader$(async () => {
@@ -10,15 +10,15 @@ export const useProjects = routeLoader$(async () => {
 export default component$(() => {
   const projects = useProjects();
   return (
-    <section class="flex flex-col px-4 sm:px-[32px] md:px-[104px] lg:px-[248px] py-8 sm:py-[24px]">
+    <section class="flex flex-col py-8 sm:py-16 lg:py-24">
       <header class="pb-6 sm:pb-8">
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold">Projects</h2>
       </header>
       <section class="flex flex-shrink-0 flex-col gap-y-6 sm:gap-y-[24px]">
         {projects.value.map((project) => {
           return (
-            <article 
-              class="flex flex-col sm:flex-row bg-white dark:bg-gray-800 p-4 sm:p-6 gap-4 sm:gap-6 lg:gap-8 rounded-lg shadow-sm hover:shadow-md transition-shadow" 
+            <article
+              class="flex flex-col sm:flex-row bg-white dark:bg-gray-800 p-4 sm:p-6 gap-4 sm:gap-6 lg:gap-8 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               key={project.id}
             >
               <a
@@ -46,14 +46,14 @@ export default component$(() => {
                     target="_blank"
                     href={
                       project.url ===
-                      'https://gif-app.vercel.app/?title=christopher+robin'
+                        'https://gif-app.vercel.app/?title=christopher+robin'
                         ? 'https://gif-app.vercel.app/'
                         : project.url
                     }
                     class="text-blue-600 dark:text-blue-400 hover:underline"
                   >
                     {project.url ===
-                    'https://gif-app.vercel.app/?title=christopher+robin'
+                      'https://gif-app.vercel.app/?title=christopher+robin'
                       ? 'https://gif-app.vercel.app/'
                       : project.url}
                   </a>
@@ -73,3 +73,7 @@ export default component$(() => {
     </section>
   );
 });
+
+export const head: DocumentHead = {
+  title: 'Projects',
+};

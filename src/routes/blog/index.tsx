@@ -7,8 +7,7 @@ export default component$(() => {
   const isProduction = true
 
   return (
-    <main class="px-4 sm:px-[45px] lg:px-[112px]">
-      <div class="py-8 sm:py-12 lg:py-24 lg:px-32 space-y-6 sm:space-y-8">
+    <div class="py-8 sm:py-16 lg:py-24 space-y-6 sm:space-y-8">
         <h3 class="text-3xl sm:text-4xl font-bold">Blog</h3>
         
         {isProduction ? (
@@ -40,7 +39,6 @@ export default component$(() => {
           </div>
         )}
       </div>
-    </main>
   );
 });
 
